@@ -18,6 +18,8 @@ import {
   BarChart2,
 } from "lucide-react";
 import AppLayout from "../components/layout/AppLayout";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const statusStyle = {
   completed: { bg: "bg-green-100 text-primary-700", label: "Completed", icon: <CheckCircle size={13} /> },
@@ -36,6 +38,29 @@ export default function HistoryPage() {
   const [expandedId, setExpandedId] = useState(null);
 
   const ITEMS_PER_PAGE = 10;
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text("ForecastFood - Prediction History", 14, 15);
+    doc.setFontSize(10);
+    doc.text(`Downloaded: ${new Date().toLocaleDateString("id-ID")}`, 14, 22);
+    const rows = historyData.map((h) => [
+      new Date(h.created_at).toLocaleDateString("id-ID"),
+      h.event_type || "-",
+      h.type_of_food || "-",
+      String(h.number_of_guests || "-"),
+      h.predicted_quantity ? Number(h.predicted_quantity).toFixed(2) : "-",
+      h.status || "-",
+    ]);
+    autoTable(doc, {
+      startY: 28,
+      head: [["Tanggal", "Tipe Acara", "Jenis Makanan", "Tamu", "Prediksi Porsi", "Status"]],
+      body: rows,
+      styles: { fontSize: 9 },
+      headStyles: { fillColor: [27, 67, 50] },
+    });
+    doc.save("forecastfood-history.pdf");
+  };
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -142,7 +167,7 @@ export default function HistoryPage() {
             <h1 className="text-2xl font-bold text-primary-900">Prediction History</h1>
             <p className="text-gray-400 text-sm mt-0.5">View all past forecasting sessions</p>
           </div>
-        </div>
+        <button onClick={handleDownloadPDF} className="flex items-center gap-2 bg-primary-800 text-white text-xs font-semibold px-4 py-2 rounded-xl hover:bg-primary-700 transition-colors"><Download size={15} />Download PDF</button></div>
 
         {/* ── Filter Bar ── */}
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
@@ -373,3 +398,4 @@ export default function HistoryPage() {
     </AppLayout>
   );
 }
+
