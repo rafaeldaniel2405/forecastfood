@@ -17,7 +17,7 @@ export default function LandingPage() {
     <LandingLayout>
       {/* ── HERO SECTION ── */}
       <section className="min-h-screen bg-[#f5f5f0] flex items-center pt-16">
-        <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
             <p className="text-primary-700 text-sm font-semibold tracking-widest uppercase mb-4">
@@ -103,7 +103,7 @@ export default function LandingPage() {
               Built for professional kitchens and global suppliers.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: <Radio className="w-5 h-5 text-white" />,
@@ -144,7 +144,7 @@ export default function LandingPage() {
               The Path to Efficiency
             </h2>
           </div>
-          <div className="grid grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             <div className="absolute top-10 left-[28%] right-[28%] h-0.5 bg-primary-200" />
             {[
               {

@@ -81,7 +81,7 @@ export default function AboutPage() {
       {!isLoggedIn && <div className="pt-16" />}
 
       {/* ── Mission Section ── */}
-      <div className="bg-white rounded-2xl p-8 shadow-sm mb-6 grid grid-cols-2 gap-12 items-center">
+      <div className="bg-white rounded-2xl p-8 shadow-sm mb-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <span className="text-xs font-bold text-primary-700 uppercase tracking-widest bg-primary-50 px-3 py-1 rounded-full">
             The Mission
@@ -139,7 +139,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-primary-900 mb-2">The Predictive Cycle</h2>
           <p className="text-gray-400 text-sm">Simple integration, powerful results in three core steps.</p>
         </div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cycle.map((c, i) => (
             <div key={i} className={`rounded-2xl p-6 ${i === 1 ? "bg-primary-800" : "bg-[#f5f5f0]"}`}>
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${i === 1 ? "bg-primary-700" : "bg-primary-800"}`}>
@@ -177,7 +177,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-primary-900 mb-2">Meet the Innovators</h2>
           <p className="text-gray-400 text-sm">Tim CC26-PSU403 — Coding Camp 2026 powered by DBS Foundation</p>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {team.map((member, i) => (
             <div key={i} className="flex items-center gap-4 bg-[#f5f5f0] rounded-2xl p-4">
               <div className="w-12 h-12 rounded-full bg-primary-800 flex items-center justify-center text-white text-sm font-bold shrink-0">

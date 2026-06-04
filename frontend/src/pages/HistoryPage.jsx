@@ -330,7 +330,7 @@ export default function HistoryPage() {
         </div>
 
         {/* ── Bottom Stats ── */}
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="bg-white rounded-2xl p-6 shadow-sm">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
               Accuracy Trend

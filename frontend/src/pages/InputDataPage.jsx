@@ -299,7 +299,7 @@ export default function InputDataPage() {
             Upload CSV
           </button>
         </div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* ── Left: Form ── */}
           <div className="col-span-2 flex flex-col gap-6">
 
@@ -309,7 +309,7 @@ export default function InputDataPage() {
                 <p className="text-sm font-bold text-gray-700 uppercase tracking-wide mb-5">
                   Detail Acara
                 </p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <SelectField
                     label="Jenis Makanan"
                     icon={FIELD_ICONS.type_of_food}

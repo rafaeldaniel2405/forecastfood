@@ -64,7 +64,7 @@ export default function RegisterPage() {
   return (
     <>
       {ToastComponent}
-      <div className="min-h-screen grid grid-cols-2">
+      <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
         {/* ── LEFT PANEL ── */}
         <div className="bg-primary-900 flex flex-col p-10 relative overflow-hidden">
           {/* Logo */}

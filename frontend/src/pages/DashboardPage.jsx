@@ -169,7 +169,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Stats Cards ── */}
-        <div className="grid grid-cols-4 gap-5 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
           {[
             {
               icon: <TrendingUp size={18} />,
@@ -212,7 +212,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Charts Row ── */}
-        <div className="grid grid-cols-2 gap-5 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
           {/* Rata-rata Porsi per Kategori Makanan */}
           <div className="bg-white rounded-2xl p-6 shadow-sm">
             <div className="mb-5">
