@@ -135,7 +135,7 @@ export default function HistoryPage() {
 
   return (
     <AppLayout>
-      <div className="p-8">
+      <div className="p-4 md:p-8">
         {/* ── Top Bar ── */}
         <div className="flex items-center justify-between mb-8">
           <div>

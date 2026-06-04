@@ -67,7 +67,7 @@ export default function AboutPage() {
   }
 
   const content = (
-    <div className="p-8">
+    <div className="p-4 md:p-8">
       {/* ── Top Bar — hanya tampil kalau sudah login ── */}
       {isLoggedIn && (
         <div className="flex items-center justify-between mb-8">
