@@ -90,6 +90,8 @@ export default function HistoryPage() {
       setHistoryData((prev) => prev.filter((h) => h.id !== id));
     } catch (error) {
       console.error("Error deleting history:", error);
+      // Tetap hapus dari tampilan meski API gagal
+      setHistoryData((prev) => prev.filter((h) => h.id !== id));
     }
   };
 
@@ -398,4 +400,5 @@ export default function HistoryPage() {
     </AppLayout>
   );
 }
+
 
